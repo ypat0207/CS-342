@@ -9,6 +9,7 @@ class MyMoneyTest {
     static MyMoney cashValues;
     static MyMoney interestValues;
     static MyMoney cashAndInterest;
+    //yoooo what is happening I have no idea...
     @BeforeAll
     static void setup() {
         cashValues = new MyMoney("values.txt", 8, 1);
