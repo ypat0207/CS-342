@@ -9,7 +9,6 @@ class MyMoneyTest {
     static MyMoney cashValues;
     static MyMoney interestValues;
     static MyMoney cashAndInterest;
-    static MyMoney thisandThat;
     @BeforeAll
     static void setup() {
         cashValues = new MyMoney("values.txt", 8, 1);
