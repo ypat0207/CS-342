@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: MyMoneyTest
+-------------------------------------------------------------------------------
+Tests run: 30, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.129 s <<< FAILURE! - in MyMoneyTest
+myMoneyFirstConstructorTestTwo  Time elapsed: 0.006 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: interest arrays are not equal in constructor one ==> actual array was <null>
+	at MyMoneyTest.myMoneyFirstConstructorTestTwo(MyMoneyTest.java:28)
+
