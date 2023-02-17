@@ -27,12 +27,13 @@ public class JavaFXTempalate extends Application
     l1 = new Label("Label");
     b1.setPrefSize(200,50);
     b2.setPrefSize(200,50);
-    b1.setTranslateX(250);
+    b1.setTranslateX(250);	
     b1.setTranslateY(10);
     b2.setTranslateX(250);
     b2.setTranslateY(100);
     l1.setTranslateX(332);
     l1.setTranslateY(100);
+    
     t1 = new TextField();
     MenuBar m = new MenuBar();
     Menu menuOne = new Menu("Option 1");
