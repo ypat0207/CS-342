@@ -28,6 +28,7 @@ class MyMoneyTest {
         assertArrayEquals(interestArray, interestValues.getInterestValues(), "interest arrays are not equal in constructor one");
         assertEquals(interestArray.length, interestValues.getInterestValues().length, "interest arrays length is not equal in constructor one");
         assertNotNull(cashValues.getInterestValues()," array length from getcashValues constructor should be null");
+
     }
 	@Test
     void myMoneySecondConstructorTestOne() {
