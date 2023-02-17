@@ -104,3 +104,5 @@ class MyMoneyTest {
         assertEquals(interestArray.length, cashAndInterest.getInterestValues().length, "values in the array interestArray aren't matching with the interest values in text file, line 117");
     }
 }
+
+// THis is going to be one of those days where.....
