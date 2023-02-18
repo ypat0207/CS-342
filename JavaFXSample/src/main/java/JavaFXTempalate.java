@@ -1,15 +1,20 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.event.EventHandler;
+import javafx.geometry.Rectangle2D;
 import javafx.event.ActionEvent;
 
 public class JavaFXTempalate extends Application 
@@ -44,11 +49,15 @@ public class JavaFXTempalate extends Application
     Menu menuThree = new Menu("Option 3");
     Menu menuFour = new Menu("Option 4");
     m.getMenus().addAll(menuOne,menuTwo,menuThree,menuFour);
-    
-   
-    
     root = new VBox(m,b1,b2,t1,l1);
+ 
     scene = new Scene(root,700,700);
+    scene.getStylesheets().add("style.css");
+    primaryStage.setScene(scene);
+    primaryStage.setResizable(true);
+    primaryStage.show();
+  
+    
     
     b1.setOnAction(new EventHandler<ActionEvent>() {
         @Override
@@ -67,9 +76,8 @@ public class JavaFXTempalate extends Application
         }
     });
   b2.setOnAction(e->t1.setText("Using Lambda expression"));
-    
-    primaryStage.setScene(scene);
-    primaryStage.show();
+  	
+   
     
   } 
     

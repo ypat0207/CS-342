@@ -1,0 +1,14 @@
+.body {
+    -fx-background-image: url(/Users/yash/Desktop)
+    -fx-background-size: contain;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button {
+	-fx-padding: 10px, 30px;
+	-fx-background-color: green;
+	-fx-text-fill: red;
+	-fx-font-weight: 900;
+	
+}
