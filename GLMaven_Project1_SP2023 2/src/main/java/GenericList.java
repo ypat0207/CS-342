@@ -1,8 +1,7 @@
 import java.util.ArrayList;
+
 import java.util.Iterator;
 import java.util.LinkedList;
-
-import GenericList.Node;
 public abstract class GenericList<T> implements Iterable<T>  {
 	private Node<T> head;
 	private int length;
@@ -22,9 +21,11 @@ public abstract class GenericList<T> implements Iterable<T>  {
 		T data;
 		int code;
 		Node<T>next;
+		Node<T>prev;
 		public Node(T val) {
 			this.data = val;
 			this.next = null;
+			this.prev = null;
 		}
 		
 		
@@ -39,10 +40,9 @@ public abstract class GenericList<T> implements Iterable<T>  {
 		
 		Node<T>first = head;
 		
-		if(first != null) {
-			System.out.println(first.data);
-			first = first.next;
-		} 
+		if(first == null) {
+			System.out.print("Empty list!!");
+		}
 		while(first != null) {
 			System.out.println(first.data);
 			first = first.next;
@@ -59,54 +59,45 @@ public abstract class GenericList<T> implements Iterable<T>  {
 
 	// This method stores and returns all values currently in the list into an ArrayList and returns it.
 	public ArrayList<T> dumplist() {
-		 Node <T> firstNode = head;
-	        ArrayList <T> dumpArray = new ArrayList<T>();
-	        while (firstNode != null) {
-	        	dumpArray.add(firstNode.data);
-	            firstNode = firstNode.next;
-	        }
-	        head = null;
-	        length = 0;
+		ArrayList <T> dumpArray = new ArrayList<T>();
+		 Node <T> first = head;
+	       for(int i = 0; i < length; i++) {
+	    	   dumpArray.add(first.data);
+	    	   first = first.next;
+	    	}
 	        return dumpArray;
 	}
 	
 	// return the value at the specified index or null if the index is out of bounds.
 	public T get(int index) {
 		// needs to return something 
-		if (index > length - 1 || index < 0) {
+		if (index < 0 || index > length - 1) {
             return null;
         }
-        int counter = 0;
-        Node <T> firstNode = head;
-        while (firstNode != null) {
-            if (index == counter) {
-                return firstNode.data;
-            }
-            counter++;
-            firstNode = firstNode.next;
+
+        Node <T> first = head;
+        for(int i = 0; i < index-1; i++) {
+        	first = first.next;
         }
-        return firstNode.data;
+        T val = first.data;
+        return val;
 	}
 	
 	// replace the element at specified position in the list with the specified element and return element previously at the specified position.
 	// return null if index is out of bounds.
 	public T set(int index, T element) {
 		// needs to return something
-		if (index > length - 1 || index < 0) {
+		if (index < 0 || index > length - 1) {
             return null;
         }
-        int counter = 0;
-        Node <T> firstNode = head;
-        while (firstNode != null) {
-            if (index == counter) {
-                T prevData = firstNode.data;
-                firstNode.data = element;
-                return prevData;
-            }
-            counter++;
-            firstNode = firstNode.next;
+  
+        Node <T> first = head;
+        for(int i = 0; i < index-1; i++) {
+        	first = first.next;
         }
-        return firstNode.data;
+        T val = first.data;
+        first.data = element;
+        return val;
 	}
 	
 	// these are getters and setters for the program.
@@ -127,8 +118,10 @@ public abstract class GenericList<T> implements Iterable<T>  {
 					}
 					
 	Iterator<T> descendingIterator() {
-		//needs to return something
+		return new ReverseGLLIterator(head);
+	
 	}
+	
 	
 	
 	

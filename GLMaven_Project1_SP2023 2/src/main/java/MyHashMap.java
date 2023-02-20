@@ -8,7 +8,7 @@ public abstract class MyHashMap<T> implements Iterable<T> {
 		map = new ArrayList<GenericQueue<T>>(10);
 		
 		for(int i = 0; i < map.size(); i++) {
-			map.add(new GenericQueue<T>());
+			map.add(new GenericQueue<T>(value));
 			}
 			put(key,value);
 		}
@@ -19,19 +19,19 @@ public abstract class MyHashMap<T> implements Iterable<T> {
 		
 		
 	}
-	public boolean contains(String key) {
-		
-	}
-	public T get(String key) {
-		
-	}
-	public int size() {
-		
-	}
-	public boolean isEmpty() {
-		
-	}
-	public T replace(String key, T value) {
-		
-	}
+//	public boolean contains(String key) {
+//		
+//	}
+//	public T get(String key) {
+//		
+//	}
+//	public int size() {
+//		
+//	}
+//	public boolean isEmpty() {
+//		
+//	}
+//	public T replace(String key, T value) {
+//		
+//	}
 }
