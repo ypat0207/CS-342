@@ -4,7 +4,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -45,13 +48,13 @@ public class JavaFXTemplate extends Application {
 		borderPane = new BorderPane();
 		borderPane.setCenter(t1);
 		borderPane.setRight(t2);
-		t2.setPadding(new Insets(10,10,10,10));
 		t2.setTranslateY(336);
 		b1.setTranslateY(250);
 		b2.setTranslateY(350);
 		
 		root = new VBox(20,b1,b2);
 		borderPane.setLeft(root);
+		borderPane.setBackground(new Background(new BackgroundFill(Color.RED, null, null)));
 		
 		
 		b1.setOnAction(new EventHandler<ActionEvent>() {
@@ -63,10 +66,7 @@ public class JavaFXTemplate extends Application {
 				b1.setDisable(true);
 				b1.setText("Pressed");
 				b1.setPrefSize(75, 50);
-				
-				
 			}
-			
 		});
 
 		b2.setOnAction(e-> {
@@ -77,7 +77,6 @@ public class JavaFXTemplate extends Application {
 			b1.setText("Button 1");
 			b1.setPrefSize(125,50);
 			});
-		root.setPadding(new Insets(20, 20, 20, 20));
 		scene = new Scene(borderPane, 700,700);
 		primaryStage.setScene(scene);
 		primaryStage.show();
