@@ -1,5 +1,6 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -7,6 +8,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
@@ -24,6 +26,8 @@ public class JavaFXTempalate extends Application
     private Label l1;
     private VBox root;
     private Scene scene;
+    private Tooltip t;
+    //private MenuBar m;
 
   @Override
   public void start(Stage primaryStage) {
@@ -41,14 +45,20 @@ public class JavaFXTempalate extends Application
     
     t1 = new TextField();
     MenuBar m = new MenuBar();
-    Menu menuOne = new Menu("Option 1");
+    Menu menuOne = new Menu("Menu");
     MenuItem iOne = new MenuItem("Clear text");
+    MenuItem iTwo = new MenuItem("Rules");
+    t = new Tooltip();
+    t.setText("Terms: \n 1. Bet card: a grid of numbers (1-80) that the player uses to choose what numbers to play \n 2. Number of spots: a player can choose to play 1 number(1 spot), 4 numbers(4 spots), 8 numbers(8 spots) or 10 numbers(10 spots) \n    One bet card plays only one of the designated number of spots. \n 3. Drawings: each unique selection of 20 random numbers, with no duplicates, by the game. Players may play a single bet card for a minimum of 1 and maximum of 4 drawings.");
+    t.setShowDuration(new Duration(5000000));
     iOne.setOnAction(e->t1.clear());
+    iTwo.setToolTip(t);
+    
     menuOne.getItems().add(iOne);
-    Menu menuTwo = new Menu("Option 2");
-    Menu menuThree = new Menu("Option 3");
-    Menu menuFour = new Menu("Option 4");
-    m.getMenus().addAll(menuOne,menuTwo,menuThree,menuFour);
+//    Menu menuTwo = new Menu("Option 2");
+//    Menu menuThree = new Menu("Option 3");
+//    Menu menuFour = new Menu("Option 4");
+    m.getMenus().addAll(menuOne);
     root = new VBox(m,b1,b2,t1,l1);
  
     scene = new Scene(root,700,700);
