@@ -11,7 +11,6 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 
 public class JavaFXTemplate extends Application {
 	private Button b1,b2;
@@ -54,7 +53,7 @@ public class JavaFXTemplate extends Application {
 		
 		root = new VBox(20,b1,b2);
 		borderPane.setLeft(root);
-		borderPane.setBackground(new Background(new BackgroundFill(Color.RED, null, null)));
+		borderPane.setBackground(new Background(new BackgroundFill(Color.YELLOW, null, null)));
 		
 		
 		b1.setOnAction(new EventHandler<ActionEvent>() {
